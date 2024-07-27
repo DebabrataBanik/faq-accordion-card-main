@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Kumbh+Sans:wght@100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+  --text-dark-blue: hsl(238, 29%, 16%);
+  --text-soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --gradient-violent: hsl(273, 75%, 66%);
+  --gradient-blue: hsl(240, 73%, 65%);
+
+  --divider: hsl(240, 5%, 91%);
+}
+
+html{
+  font-size: 12px;
+}
+
+*,*::before,*::after{
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  min-height: 100vh;
+  background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  padding-block: 12rem;
+}
+
+.card__container{
+  width: 87%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  width: 100%;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-block: 10rem 3rem;
+  box-shadow: 0px 20px 50px -10px hsla(238, 29%, 16%, 0.5);
+}
+
+.illustration{
+  position: absolute;
+  width: 75%;
+  top: -110px;
+}
+.illustration-shadow{
+  position: absolute;
+  width: 200px;
+  aspect-ratio: 1;
+  background-color: hsla(240, 73%, 65%, 0.1);
+  border-radius: 5px;
+  top: -100px;
+  transform: rotateZ(45deg);
+}
+
+
+aside{
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  font-size: 3rem;
+  color: var(--text-dark-blue);
+}
+
+.q-container{
+  border-bottom: 1px solid var(--divider);
+}
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--very-dark-grayish-blue);
+}
+.question.selected{
+  font-weight: 700;
+  color: var(--text-dark-blue);
+}
+.inverted{
+  transform: scaleY(-1);
+}
+
+.answer{
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+  font-size: 1.05rem;
+  margin-right: 2rem;
+  line-height: 1.5rem;
+  display: none;
+}
+.show{
+  display: block;
+}
