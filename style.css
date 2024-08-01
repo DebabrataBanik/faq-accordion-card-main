@@ -53,16 +53,21 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   padding-block: 8rem 3rem;
   box-shadow: 0px 20px 50px -10px hsla(238, 29%, 16%, 0.5);
   z-index: 0;
 }
-
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
 .illustration{
   position: absolute;
   width: clamp(210px, 60vw, 275px);
-  top: -100px;
+  top: -200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,10 +76,10 @@ body{
   background-image: url(images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 100%;
-  height: 150px;
+  width: clamp(210px, 60vw, 275px);
+  height: 125px;
   position: absolute;
-  top: 105px;
+  top: -90px;
   z-index: -1;
 }
 aside{
@@ -124,7 +129,7 @@ h1{
   display: block;
 }
 
-@media (min-width: 768px){
+@media (min-width: 900px){
   .wrapper {
     padding: 0;
     display: flex;
@@ -134,52 +139,62 @@ h1{
   .card{
     max-width: 950px;
     flex-direction: row;
-    padding-block: 6rem;
+    padding: 0;
     justify-content: space-between;
-    position: relative;
+    height: 506px;
   }
-  .card::before{
-    position: absolute;
-    content: '';
-    left: 0px;
-    top: 0;
+
+  section{
     width: 50%;
-    height: 100%;
-    background: url(images/illustration-woman-online-desktop.svg) right 85px bottom 50px, url(images/bg-pattern-desktop.svg) right 85px bottom -170px;
-    background-repeat: no-repeat; 
+    height: 506px;
+    background: url(images/illustration-woman-online-desktop.svg) bottom 75px left -85px, url(images/bg-pattern-desktop.svg) bottom -150px left -575px;
+    background-repeat: no-repeat;
   }
-  .card::after{
+  section::after{
     position: absolute;
     content: '';
     background-image: url(images/illustration-box-desktop.svg);
     background-repeat: no-repeat;
-    top: 210px;
     left: -95px;
-    width: 50%;
-    height: 100%;
+    bottom: 100px;
+    width: 40%;
+    height: 40%;
+    animation: hop 2s ease-in-out;
+    animation-iteration-count: infinite;
   }
+  @keyframes hop {
+    0%{
+      transform: translateY(1%);
+    }    
+    50%{
+      transform: translateY(5%);
+    }
+    100%{
+      transform: translateY(1%);
+    }
+  }
+
   .illustration{
-    position: relative;
-    width: 50%;
-    top: 0;
-    overflow: hidden;
-  }
-  .illustration img{
-    display: none;
+   display: none;
   }
   .illustration-shadow{
     display: none;
   }
   aside{
+    height: 100%;
     width: 50%;
+    align-self: flex-start;
+    padding-top: 7rem;
+    padding-left: 2rem;
     padding-right: clamp(3rem, 5vw, 7rem);
   }
   h1{
     text-align: left;
-    margin-top: 0;
+    margin-block: 0 3rem;
   }
-  h2{
-    margin-block: 1.2rem;
+  .question{
+    margin-block: 1.25rem;
+    font-size: 1.2rem;
   }
   h2 img{
     margin-right: 1rem;
