@@ -16,7 +16,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 ### Links
 
-- [Live Site URL]()
+- [Live Site URL](https://debabratabanik.github.io/faq-accordion-card-main/)
 - [Solution URL]()
 
 ### Built-with
